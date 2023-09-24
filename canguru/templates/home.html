@@ -1,0 +1,151 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Davi Martignoni Barros</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <h1>Como Lutar com um Canguru</h1>
+  <h3>Davi Barros | 20/08/2023</h3>
+  
+  <p>
+    A violência é um problema cada vez maior nos dias de hoje, e uma ameaça que aterroriza a vida dos brasileiros são os constantes ataques de canguru. Tendo isso em vista, segue um tutorial de como combater um canguru caso você se encontre nessa situação.
+  </p>
+
+  <div class="center">
+  <img src="https://img.buzzfeed.com/buzzfeed-static/static/2021-09/29/4/asset/e48a8734e1de/sub-buzz-1711-1632889246-33.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto" height="400px">
+  </div>
+
+  <h2>Ataques do Canguru</h2>
+  <p>
+    O canguru possui diversas formas de ferir seu oponente em uma luta. O primeiro passo para sobreviver a um encontro com um desses ferozes marsupiais é conhecer seu comportamento em uma luta, e saber como reagir de forma eficiente.
+  </p>
+  
+  <ol>
+    <li><b>Intimidação</b></li>
+    <p>
+      Muitas vezes, o animal tentará intimidar seu adversário ficando de pé nas patas traseiras, utilizando sua cauda para manter o equilíbrio. Ele pode também rosnar quando estiver irritado, contribuindo para a intimidação. Nesse momento, recuar com cautela pode te ajudar a evitar um conflito, mas nunca fuja, pois isso pode aumentar a agressividade do animal.
+    </p>
+    <div class="center">
+    <img src="https://i.ytimg.com/vi/YjJqro2xNm8/maxresdefault.jpg" height="250px">
+    </div>
+    <li><b>Chute</b></li>
+    <p>
+      O chute é o ataque mais poderoso do canguru. Apoiando sua cauda no chão, o animal usa suas duas patas traseiras para golpear o adversário com uma força devastadora, usando suas garras afiadas para causar um dano ainda maior. Se necessário, utilize seus braços e pernas para impedir que o chute alcance suas partes vitais.
+    </p>
+    <div class="center">
+    <img src="https://thegolfnewsnet.com/wp-content/uploads/2015/02/kangaroo-dropkick.jpg" height="250px">
+    </div>
+    <li><b>Agarrão</b></li>
+    <p>
+      O feroz marsupial pode utilizar suas patas dianteiras para agarrar seu inimigo, deixando-o vulnerável a um chute. Ele também possui garras em suas patas dianteiras, o que pode causar ferimentos adicionais. Mantenha sempre uma distância segura do animal, para evitar seus agarrões.
+    </p>
+    <div class="center">
+    <img src="https://compote.slate.com/images/c1967d4a-2b80-40a1-aa2e-d0f88b632834.jpg?crop=568%2C346%2Cx0%2Cy0&width=1280" height="250px">
+    </div>
+    <li><b>Retirada</b></li>
+    <p>
+      Em algumas ocasiões, o canguru pode preferir recuar do conflito, geralmente quando não se sente muito ameaçado. Intimidar o animal também pode resultar nessa reação, mas esteja preparado para caso isso o irrite ainda mais.
+    </p>
+    <div class="center">
+    <img src="https://live-production.wcms.abc-cdn.net.au/71725db0592d831d8d55d869193b6916?impolicy=wcms_crop_resize&cropH=1997&cropW=3000&xPos=0&yPos=25&width=862&height=575" height="250px">
+    </div>
+  </ol>
+
+  <h2>Espécies de Canguru</h2>
+  <p>Existem quatro tipos principais de canguru: o <u>canguru-vermelho</u>, o <u>canguru-antilopino</u>, o <u>canguru cinza oriental</u> e o <u>canguru cinza ocidental</u>. Em um conflito com um desses animais, é importante conhecer sua espécie e suas características gerais.</p>
+
+  <div class="center">
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Nome científico</th>
+        <th>Comprimento máximo</th>
+        <th>Peso máximo</th>
+      </tr>
+      {% for type in kangaroo_types %}
+      <tr>
+        <td> {{ type.title }} </td>
+        <td><i> {{ type.sci_name }} </i></td>
+        <td> {{ type.length }} m</td>
+        <td> {{ type.weight }} kg</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="center">
+  <img src="https://a-z-animals.com/media/2023/06/b953101ac77556e3248d5a8b2d47004ff95a5a33-683x1024.jpg" height="600px">
+  </div>
+
+  <h2>Cangurus Lendários</h2>
+  <p>Existem alguns relatos de cangurus com poder extraordinário, capazes de vaporizar suas vítimas antes que elas tenham chance de escapar. Infelizmente não existem imagens de nenhum desses cangurus, mas os poucos sobreviventes conseguiram descrever sua aparência. Se por acaso você se deparar com uma dessas monstruosidades, <b><u>FUJA O MAIS RÁPIDO POSSÍVEL, REPITO, FUJA O MAIS RÁPIDO POSSÍVEL!!!!!!</u></b></p>
+
+  <ol>
+    {% for kangaroo in legendary_kangaroos %}
+    <li><b> {{ kangaroo.title }} </b>- {{kangaroo.killcount}} vítimas estimadas</li>
+    <p> {{kangaroo.description}} Visto pela última vez em {{kangaroo.last_seen}}. </p>
+    <a href="legendary_kangaroo/update/{{kangaroo.id}}"><button>Atualizar</button></a><a href="legendary_kangaroo/delete/{{kangaroo.id}}"><button>Remover</button></a><br>
+    
+    {% endfor %}
+  </ol>
+  <p>Tem um relato de um canguru lendário que não está no nosso site? <a href='/legendary_kangaroo/add'>Adicione um novo canguru lendário</a></p>
+  
+  <h2>Se Defendendo de um Canguru</h2>
+  <p>Um humano não tem chances de vencer uma luta contra um canguru. Caso você se dê de cara com uma dessas máquinas mortais, suas melhores chances são de intimidá-lo, atordoá-lo ou convencê-lo de que você não é uma ameaça, fazendo-o recuar. Aqui estão algumas dicas de como conduzir um encontro com esses animais, de modo a alcançar um resultado favorável:</p>
+  <ul>
+    <li><p>Mantenha uma distância segura e tente criar uma barreira entre você e o animal.</p></li>
+    <li><p>Se possível, pegue um galho de árvore grande.</p></li>
+    <li><p>Se for atacado, vire-se de lado, protegendo seu rosto e órgãos vitais.</p></li>
+    <li><p>Recue lentamente de lado, nunca dê as costas ao canguru.</p></li>
+    <li><p>Uma forma de atordoar e possivelmente espantar um canguru, caso ele seja uma ameaça, é desferir um soco em seu focinho, sempre mantendo uma distância segura para evitar seus chutes. Assista a uma demonstração:</p>
+  <a href="https://www.youtube.com/watch?v=PthKuuXh6qY" target="_blank">https://www.youtube.com/watch?v=PthKuuXh6qY</a>
+  <p>Porém, <u>tome muito cuidado!!!</u> Os dentes inferiores do canguru formam uma ponta afiada, que pode perfurar sua mão ao dar o golpe.</p>
+  <div class="center">
+    <img src="https://qph.cf2.quoracdn.net/main-qimg-0b51c18e73c2d7e9bc362779b4936065-lq" height="250px">
+    </div></li>
+  </ul>
+
+  <p>Seguindo as dicas acima, você terá maiores chances de sair ileso de um eventual encontro com um dos temidos cangurus. Com isso em mente, boa sorte e seja cauteloso!</p>
+    
+  <h2>Bibliografia</h2>
+  <ul>
+    <li><a href="https://pickvisa.com/blog/how-to-fight-with-a-kangaroo-in-case-it-is-attacked" target="_blank">https://pickvisa.com/blog/how-to-fight-with-a-kangaroo-in-case-it-is-attacked</a></li>
+    <li><a href="https://findanexpert.unimelb.edu.au/news/52210-reminder--kangaroos-are-%E2%80%98vegetarian-gladiators%E2%80%99-with-kicks-that-can-kill.-an-expert-explains-why-they-attack" target="_blank">https://findanexpert.unimelb.edu.au/news/52210-reminder--kangaroos-are-%E2%80%98vegetarian-gladiators%E2%80%99-with-kicks-that-can-kill.-an-expert-explains-why-they-attack</a></li>
+    <li><a href="https://www.quora.com/Is-it-easy-to-fight-a-kangaroo" target="_blank">https://www.quora.com/Is-it-easy-to-fight-a-kangaroo</a></li>
+    <li><a href="https://www.britannica.com/animal/kangaroo/Behaviour" target="_blank">https://www.britannica.com/animal/kangaroo/Behaviour</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Kangaroo" target="_blank">https://en.wikipedia.org/wiki/Kangaroo</a></li>
+    <li><a href="https://slate.com/human-interest/2012/08/kangaroo-attack-how-to-protect-yourself-from-a-hopping-kicking-clawing-beast.html" target="_blank">https://slate.com/human-interest/2012/08/kangaroo-attack-how-to-protect-yourself-from-a-hopping-kicking-clawing-beast.html</a></li>
+  </ul>
+
+  <h2>Sobre o Autor</h2>
+  <div class="center">
+    <img src="{% static 'images/davibarros.png' %}" height="150px" width="400px">
+  </div>
+    <p>
+      Davi Barros nasceu em Niterói (muito longe), se mudou para o Rio aos 7 anos e hoje é um <s>nerd</s> estudante de engenharia da computação na PUC-Rio. É faixa verde em karatê, e já sobreviveu a 11 encontros com cangurus, em 6 deles tendo nocauteado o oponente. Ao estudar o comportamento dos cangurus, desenvolveu um estilo de luta similar ao deles, utilizando voadoras como seu principal golpe, o que o permitiu que vencesse a maioria de suas batalhas.
+    </p>
+
+  <h2>Comentários</h2>
+
+  <a href="/comment/add">Adicionar Comentário</a>
+  <ul>
+    {% for comment in comments %}
+    <li><span class="username"> {{ comment.title }} - {{ comment.date }} </span></li>
+    <div class="box">
+      <p><span class="comment"> {{ comment.body }} </span></p>
+    </div>
+    <button> {{comment.likes }} likes</button> <button> {{ comment.dislikes }} dislikes</button> <a href="comment/update/{{comment.id}}" ><button>Atualizar</button></a> <a href="comment/delete/{{comment.id}}"><button>Remover</button></a>
+    {% endfor %}
+  </ul>
+  
+  <br>
+
+</body>
+
+</html>

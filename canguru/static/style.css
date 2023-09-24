@@ -1,0 +1,72 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+}
+
+body {
+  margin: 2% 25% 2% 25%;
+}
+
+p {
+  font-size: 18px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  border: solid #512500 8px;
+  margin: 16px 0 16px 0;
+  border-radius: 10px;
+}
+
+a {
+  font-size: 18px;
+}
+
+li {
+  font-size: 22px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+table, th, td {
+  border: solid black 1px;
+  background-color: white;
+  padding: 3px;
+}
+
+button {
+  background-color: #b4b4b4;
+}
+
+.username {
+  font-size: 18px;
+}
+
+.comment {
+  font-size: 16px;
+}
+
+.box {
+  background-color: #f0f0f0;
+  margin: 10px 0 10px 0;
+  border: solid;
+  padding: 0 20px 0 20px;
+  border-radius: 10px;
+}
