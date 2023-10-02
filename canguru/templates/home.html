@@ -11,6 +11,12 @@
 </head>
 
 <body>
+  {% if request.user.is_authenticated %}
+    <b>Bem vindo, {{request.user.username}}</b> <br>
+    <a href="{% url 'logout' %}">Sair</a>
+    <br>
+    <a href="users/update/{{user.id}}">Alterar Usuário</a>
+  {% endif %}
   <h1>Como Lutar com um Canguru</h1>
   <h3>Davi Barros | 20/08/2023</h3>
   

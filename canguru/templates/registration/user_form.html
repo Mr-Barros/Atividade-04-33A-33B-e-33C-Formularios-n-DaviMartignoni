@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Davi Martignoni Barros</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <h1>{{ action }} Usuário</h1>
+  <form method="post">
+    {% csrf_token %}
+    
+    <div>
+      <label>Nome de Usuário:</label>
+      <input type="text" name="username">
+    </div>
+    <div>
+      <label>E-mail:</label>
+      <input type="email" name="email">
+    </div>
+    <div>
+      <label>Senha:</label>
+      <input type="password" name="password">
+    </div>
+    <input type="submit" value="{{ action }}">
+  </form>
+  
+</body>
+
+</html>
